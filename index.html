@@ -1,41 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <title>DataLeaks by dataleaks</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>Czech Open Data Initiative by czodi</title>
   </head>
-
   <body>
-    <div id="container">
-      <div class="inner">
+    <div class="wrapper">
+      <header>
+        <h1 class="header">DataLeaks</h1>
+        <p class="header">Nezávislá iniciativa občanů na podporu otevřených dat</p>
 
-        <header>
-          <h1>Czech Open Data Initiative</h1>
-          <h2>Nezávislá iniciativa občanů na podporu otevřených dat</h2>
-        </header>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/czodi" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
 
-        <hr>
+        <ul>
+          <li><a class="buttons github" href="https://github.com/dataleaks">GitHub Profile</a></li>
+        </ul>
 
-        <section id="main_content">
-          <h1>
-<a name="czech-open-data-initiative" class="anchor" href="#czech-open-data-initiative"><span class="octicon octicon-link"></span></a>Czech Open Data Initiative</h1>
+      </header>
+      <section>
+        <h1>
+<a name="dataleaks" class="anchor" href="#dataleaks"><span class="octicon octicon-link"></span></a>DataLeaks</h1>
 
 <p>Otevřená data přináší prospěch všem. Proto vidíme jako nesmyslné, když státní aparát, přes všechna svá prohlášení a výroky nabízí svým občanům naprosto zanedbatelné množství dat, často navíc v nepoužitelných, proprietárních či jinak nevhodných formátech. Naším cílem není změnit situaci pomocí nějakého zázraku přes noc. Spíš nám jde o to přispět svou troškou do mlýna a nabídnout některá data prostřednictvím otevřených formátů těm, kteří o ně budou stát. Rozhodně je naše snaha během na velice dlouhé trati, která možná ani nemá cíl. Přesto věříme, že někteří lidé naši činnost ocení a třeba se i odhodlají přispět k naší snaze svým volným časem a pomůžou nám tak dosáhnout lepších a kvalitnějších výsledků.</p>
 
 <h2>
-<a name="co-je-nam-clem" class="anchor" href="#co-je-nam-clem"><span class="octicon octicon-link"></span></a>Co je naším cílem</h2>
+<a name="co-je-na%C5%A1%C3%ADm-c%C3%ADlem" class="anchor" href="#co-je-na%C5%A1%C3%ADm-c%C3%ADlem"><span class="octicon octicon-link"></span></a>Co je naším cílem</h2>
 
 <ol>
 <li>nabídnout data ve formátech, které <strong>usnadní další použití</strong> těchto dat</li>
@@ -43,12 +41,12 @@
 </li>
 <li>nabídnout snadným způsobem <strong>verzovaná data</strong> těm, kteří o to budou stát</li>
 </ol><h2>
-<a name="formty" class="anchor" href="#formty"><span class="octicon octicon-link"></span></a>Formáty</h2>
+<a name="form%C3%A1ty" class="anchor" href="#form%C3%A1ty"><span class="octicon octicon-link"></span></a>Formáty</h2>
 
 <p>Pro uložení dat jsme se rozhodli použít především <strong>textové formáty</strong>, které umožní snadné verzování pomocí verzovacího systému, hlavně ale zjednodušší vizualizaci změn mezi vybranými verzemi dat (diff). Prozatím máme vybrán formát pro uložení tabulkových dat, formáty pro uložení jiných typů dat budou vybrány ve chvíli, kdy bude nutné taková data zpracovat a uložit. Výběr takového formátu nyní by bylo podle nás zbytečně vynaložené úsilí.</p>
 
 <h3>
-<a name="csv---formt-pro-tabulkov-data" class="anchor" href="#csv---formt-pro-tabulkov-data"><span class="octicon octicon-link"></span></a>CSV - formát pro tabulková data</h3>
+<a name="csv---form%C3%A1t-pro-tabulkov%C3%A1-data" class="anchor" href="#csv---form%C3%A1t-pro-tabulkov%C3%A1-data"><span class="octicon octicon-link"></span></a>CSV - formát pro tabulková data</h3>
 
 <ul>
 <li>obsah souboru bude uložen v kódování <strong>UTF-8</strong>
@@ -56,9 +54,16 @@
 <li>pro oddělení jednotlivých sloupců bude použit znak čárky (<code>,</code>)</li>
 <li>textové hodnoty, případně hodnoty obsahující čárku, budou uzavřeny do uvozovek (<code>"</code>)</li>
 <li>pokud má hodnota obsahovat uvozovky, budou tyto zdvojeny (<code>Felicia "Fun"</code> → <code>Felicia ""Fun""</code>)</li>
-<li>datum a čas bude uložen ve formátu <code>YYYY-MM-DDTHH:MM:SS</code>
+<li>datum a čas: viz sekce <strong>Datum a čas</strong>
+</li>
+<li>u desetinných čísel bude celá a desetinná část oddělena tečkou (<code>3.14</code>)</li>
+<li>jako oddělovač řádků bude použit pouze znak "\n" (<code>LF</code> - ASCII kód <strong>10</strong> (<code>0a</code>))</li>
+</ul><h3>
+<a name="datum-a-%C4%8Das" class="anchor" href="#datum-a-%C4%8Das"><span class="octicon octicon-link"></span></a>Datum a čas</h3>
 
 <ul>
+<li>datum a čas bude uložen ve formátu <code>YYYY-MM-DDTHH:MM:SS</code>
+</li>
 <li>datum: <code>YYYY-MM-DD</code>
 </li>
 <li>měsíc konkrétního roku: <code>YYYY-MM</code>
@@ -67,19 +72,13 @@
 </li>
 <li>čas - pouze hodiny a minuty: <code>HH:MM</code>
 </li>
-</ul>
-</li>
-<li>u desetinných čísel bude celá a desetinná část oddělena tečkou (<code>3.14</code>)</li>
-<li>jako oddělovač řádků bude použit pouze znak "\n" (<code>LF</code> - ASCII kód <strong>10</strong> (<code>0a</code>))</li>
-</ul>
-        </section>
-
-        <footer>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
-
-        
-      </div>
+</ul><p>(c) Czech OpenData Initiative</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
     </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
   </body>
 </html>
